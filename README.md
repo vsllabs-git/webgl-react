@@ -8,8 +8,6 @@ $ npm install --save vsl-labs-webgl-react
 
 ### How to use:
 
-### Use Firebase in your app
-
 ```js
 import { useVslWebGL } from 'vsl-labs-webgl-react';
 import { useEffect } from 'react'
