@@ -1,5 +1,5 @@
 {
-	"name": "@vsl-labs/webgl-react",
+	"name": "vsl-labs-webgl-react",
 	"private": false,
 	"description": "VSL-Labs Webgl implementation for translating text into 3D sign language",
 	"version": "1.0.0",
@@ -50,5 +50,13 @@
 		"typescript": "^5.2.2",
 		"vite": "^5.2.0",
 		"vite-plugin-dts": "^3.8.1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/vsllabs-git/webgl-react.git"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/vsllabs-git/webgl-react/issues"
 	}
 }
