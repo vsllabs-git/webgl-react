@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from 'react'
 
 const useVslWebGL = ({ appId }: { appId: string }) => {
-  const [sessionId, setSessionId] = useState()
-  const [url, setUrl] = useState()
+  const [sessionId, setSessionId] = useState('')
+  const [url, setUrl] = useState('')
   const [isLoaded, setIsLoaded] = useState(false)
 
   const translate = useCallback(
@@ -21,19 +21,30 @@ const useVslWebGL = ({ appId }: { appId: string }) => {
 
   useEffect(() => {
     if (appId) {
+      setIsLoaded(false)
+      setSessionId('')
+      setUrl('')
       ;(async () => {
-        const response = await fetch('http://localhost:8000/demo/getSessionId', {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-            'x-app-id': appId
-          }
-        })
-        const data = await response.json()
+        try {
+          const response = await fetch('http://localhost:8000/demo/getSessionId', {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json',
+              'x-app-id': appId
+            }
+          })
+          const data = await response.json()
 
-        setSessionId(data.sessionId)
-        setUrl(data.url)
-        setIsLoaded(true)
+          if (response.status !== 200) {
+            throw new Error(data?.message || 'Something went wrong')
+          }
+
+          setSessionId(data.sessionId)
+          setUrl(data.url)
+          setIsLoaded(true)
+        } catch (err) {
+          console.log(err)
+        }
       })()
     }
   }, [appId])
