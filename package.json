@@ -7,6 +7,16 @@
 	"main": "dist/index.umd.js",
 	"module": "dist/index.es.js",
 	"types": "dist/index.d.ts",
+	"keywords": [
+		"vsl-labs",
+		"webgl-react",
+		"ASL",
+		"sign-language",
+		"ai-sign-language",
+		"text-to-ASL",
+		"Deaf-community"
+	],
+	"homepage": "https://vsl-landing.vercel.app",
 	"exports": {
 		".": {
 			"import": "./dist/index.es.js",
@@ -15,9 +25,7 @@
 		},
 		"./styles": "./dist/style.css"
 	},
-	"files": [
-		"./dist"
-	],
+	"files": ["./dist"],
 	"publishConfig": {
 		"access": "public"
 	},
