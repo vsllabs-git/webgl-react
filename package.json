@@ -1,0 +1,45 @@
+{
+	"name": "@vsl-labs/webgl-react",
+	"private": false,
+	"description": "VSL-Labs Webgl implementation",
+	"version": "1.0.0",
+	"type": "module",
+	"main": "dist/index.umd.js",
+	"module": "dist/index.es.js",
+	"types": "dist/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/index.es.js",
+			"require": "./dist/index.umd.js",
+			"types": "./dist/index.d.ts"
+		},
+		"./styles": "./dist/style.css"
+	},
+	"files": [
+		"./dist"
+	],
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"prepare": "npm run build",
+		"lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.6.4",
+		"@types/node": "^20.12.5",
+		"@types/react": "^18.2.66",
+		"@types/react-dom": "^18.2.22",
+		"@vitejs/plugin-react-swc": "^3.5.0",
+		"typescript": "^5.2.2",
+		"vite": "^5.2.0",
+		"vite-plugin-dts": "^3.8.1"
+	}
+}
