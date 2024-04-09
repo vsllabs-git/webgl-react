@@ -1,8 +1,8 @@
 {
 	"name": "vsl-labs-webgl-react",
-	"private": false,
+	"private": true,
 	"description": "VSL-Labs Webgl implementation for translating text into 3D sign language",
-	"version": "1.0.1",
+	"version": "1.0.0",
 	"type": "module",
 	"main": "dist/index.umd.js",
 	"module": "dist/index.es.js",
