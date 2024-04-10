@@ -1,15 +1,15 @@
-# vsl-labs-webgl-react
+# @vsllabs/webgl-react
 
 ### Installation:
 
 ```
-$ npm install --save vsl-labs-webgl-react
+$ npm install --save @vsllabs/webgl-react
 ```
 
 ### How to use:
 
 ```js
-import { useVslWebGL } from 'vsl-labs-webgl-react';
+import { useVslWebGL } from '@vsllabs/webgl-react';
 import { useEffect } from 'react'
 
 const app = () => {
