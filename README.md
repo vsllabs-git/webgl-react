@@ -65,13 +65,18 @@ The useVslWebGL hook provides the necessary setup and functionality for integrat
  * **loaderUrl, dataUrl, frameworkUrl, codeUrl**: URLs provided by VSL for accessing the Unity WebGL build. Each URL is necessary for loading the Unity environment properly.
 
 ### Returned Values
+The following values and functions are returned by useVslWebGL:
+
  1. VSLWebGl (JSX Component):
     * A JSX component for rendering the Unity WebGL. Can be styled and controlled within a parent component or container.
     * Example:
     ```js
      <VSLWebGl style={{ width: '100%', height: '100%' }} unityProvider={unityProvider} /> 
      ```
- 2. translateTextToASL (Function):
+ 2. unityProvider:
+    * Required prop for the *VSLWebGl* component, provides the Unity instance.
+    * Pass this to the *unityProvider* prop of *VSLWebGl* to initialize the Unity environment.
+ 3. translateTextToASL (Function):
     * Function to trigger text translation within the Unity WebGL.
     * **Arguments:** Accepts a single argument (the text to translate).
     * **Example:** translateTextToASL("Hello, world!")
@@ -79,7 +84,8 @@ The useVslWebGL hook provides the necessary setup and functionality for integrat
 
 
 
-| value         | explanation                                                                            |
-| :------------ | :------------------------------------------------------------------------------------: |
-| unityProvider | <ul><li>Required prop for the VSLWebGl component, provides the Unity instance.</li><li>Pass this to the unityProvider prop of VSLWebGl to initialize the Unity environment.</li></ul>  |
+| value         | explanation                                                                           |
+| :------------ | :------------------------------------------------------------------------------------ |
+| VSLWebGl (JSX Component) | <ul><li>A JSX component for rendering the Unity WebGL. Can be styled and controlled within a parent component or container.</li><li>Example: ```js <VSLWebGl style={{ width: '100%', height: '100%' }} unityProvider={unityProvider} /> ```</li></ul>  |
+| unityProvider | <ul><li>Required prop for the *VSLWebGl* component, provides the Unity instance.</li><li>Pass this to the *unityProvider* prop of *VSLWebGl* to initialize the Unity environment.</li></ul>  |
 | translateTextToASL | <ul><li>Function to trigger text translation within the Unity WebGL.</li><li>**Arguments:** Accepts a single argument (the text to translate).</li><li>**Example:** translateTextToASL("Hello, world!")</li></ul>  |
