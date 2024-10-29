@@ -8,14 +8,6 @@ To install the package, run:
 $ npm install --save @vsllabs/webgl-react
 ```
 
-<span style="color:red">This text is red.</span>
-
-## $\colorbox{green}{{\color{white}{This\ is\ a\ Big\ Title}}}$
-
-+ text in green
-
-$${\color{red}Red}$$
-
 $\color{green}{test}$
 
 ## Usage Example:
@@ -83,3 +75,10 @@ The useVslWebGL hook provides the necessary setup and functionality for integrat
     * Function to trigger text translation within the Unity WebGL.
     * **Arguments:** Accepts a single argument (the text to translate).
     * **Example:** translateTextToASL("Hello, world!")
+
+
+| value         | explanation                                                                            |
+| :------------ | :------------------------------------------------------------------------------------- |
+|               | * Required prop for the VSLWebGl component, provides the Unity instance.               |
+| unityProvider | * Pass this to the unityProvider prop of VSLWebGl to initialize the Unity environment. |
+|               |                                                                                        |
