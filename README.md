@@ -77,6 +77,9 @@ The useVslWebGL hook provides the necessary setup and functionality for integrat
     * **Example:** translateTextToASL("Hello, world!")
 
 
+
+
 | value         | explanation                                                                            |
-| :------------ | :------------------------------------------------------------------------------------- |
+| :------------ | :------------------------------------------------------------------------------------: |
 | unityProvider | <ul><li>Required prop for the VSLWebGl component, provides the Unity instance.</li><li>Pass this to the unityProvider prop of VSLWebGl to initialize the Unity environment.</li></ul>  |
+| translateTextToASL | <ul><li>Function to trigger text translation within the Unity WebGL.</li><li>**Arguments:** Accepts a single argument (the text to translate).</li><li>**Example:** translateTextToASL("Hello, world!")</li></ul>  |
