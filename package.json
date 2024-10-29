@@ -1,7 +1,7 @@
 {
 	"name": "@vsllabs/webgl-react",
 	"description": "VSL-Labs Webgl implementation for translating text into 3D sign language",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"type": "module",
 	"main": "dist/index.umd.js",
 	"module": "dist/index.es.js",
@@ -37,18 +37,19 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
+		"react": "18.3.1",
+		"react-dom": "18.3.1",
+		"react-unity-webgl": "9.6.0"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^1.6.4",
-		"@types/node": "^20.12.5",
-		"@types/react": "^18.2.66",
-		"@types/react-dom": "^18.2.22",
-		"@vitejs/plugin-react-swc": "^3.5.0",
-		"typescript": "^5.2.2",
-		"vite": "^5.2.0",
-		"vite-plugin-dts": "^3.8.1"
+		"@biomejs/biome": "1.9.4",
+		"@types/node": "22.8.2",
+		"@types/react": "18.3.12",
+		"@types/react-dom": "18.3.1",
+		"@vitejs/plugin-react-swc": "3.7.1",
+		"typescript": "5.6.3",
+		"vite": "5.4.10",
+		"vite-plugin-dts": "4.3.0"
 	},
 	"repository": {
 		"type": "git",
