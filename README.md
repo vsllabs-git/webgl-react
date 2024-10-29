@@ -79,6 +79,4 @@ The useVslWebGL hook provides the necessary setup and functionality for integrat
 
 | value         | explanation                                                                            |
 | :------------ | :------------------------------------------------------------------------------------- |
-|               | * Required prop for the VSLWebGl component, provides the Unity instance.               |
-| unityProvider | * Pass this to the unityProvider prop of VSLWebGl to initialize the Unity environment. |
-|               |                                                                                        |
+| unityProvider | <ul><li>Required prop for the VSLWebGl component, provides the Unity instance.</li><li>Pass this to the unityProvider prop of VSLWebGl to initialize the Unity environment.</li></ul>  |
