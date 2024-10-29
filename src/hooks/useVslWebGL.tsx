@@ -67,7 +67,7 @@ const useVslWebGL = ({ API_KEY, loaderUrl, dataUrl, frameworkUrl, codeUrl }: use
     codeUrl
   })
 
-  const translate = useCallback(
+  const translateTextToASL = useCallback(
     async (text: string) => {
       if (isLoaded && isApproved && text) {
         try {
@@ -90,6 +90,20 @@ const useVslWebGL = ({ API_KEY, loaderUrl, dataUrl, frameworkUrl, codeUrl }: use
       sendMessage('Gabi', 'GetWordsFromUser', translatedText)
     }
   }, [translatedText])
+
+  const changeBgColor = useCallback((color: string) => {
+    if (color) {
+      sendMessage('BGcontroller', 'ChangeColorFromUserInput', color)
+    }
+  }, [])
+
+  const toggleCameraRotation = useCallback((isEnabled: boolean) => {
+    sendMessage('Main Camera', 'ToggleRotationFromStringInput', isEnabled ? 'true' : 'false')
+  }, [])
+
+  const setAnimationSpeed = useCallback((speed: string) => {
+    sendMessage('speedController', 'SetSpeedFromUserInput', speed)
+  }, [])
 
   useEffect(() => {
     if (API_KEY) {
@@ -116,12 +130,15 @@ const useVslWebGL = ({ API_KEY, loaderUrl, dataUrl, frameworkUrl, codeUrl }: use
 
   return {
     VSLWebGl: Unity,
-    translate: translate,
+    translateTextToASL,
     isUnityLoaded: isLoaded,
     isTranslating,
     unityProvider,
     replay,
-    error
+    error,
+    changeBgColor,
+    toggleCameraRotation,
+    setAnimationSpeed
   }
 }
 export default useVslWebGL

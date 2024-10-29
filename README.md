@@ -1,12 +1,26 @@
 # @vsllabs/webgl-react
 
-### Installation:
+## Installation:
 
-```
+To install the package, run:
+
+```bash
 $ npm install --save @vsllabs/webgl-react
 ```
 
-### How to use:
+<span style="color:red">This text is red.</span>
+
+## $\colorbox{green}{{\color{white}{This\ is\ a\ Big\ Title}}}$
+
++ text in green
+
+$${\color{red}Red}$$
+
+$\color{green}{test}$
+
+## Usage Example:
+
+Below is an example of how to use the useVslWebGL hook within a React component:
 
 ```js
 import { useState } from 'react'
@@ -17,38 +31,29 @@ const app = () => {
     const [inputText, setInputText] = useState('')
 
     // invoke the useVslWebGL hook with your personal API_KEY and build URLs
-    const { VSLWebGl, unityProvider, translate, isUnityLoaded, isTranslating, replay, error } = useVslWebGL({
+    const { VSLWebGl, unityProvider, translateTextToASL, isUnityLoaded, isTranslating, replay, error } = useVslWebGL({
         API_KEY: 'Your API Key here',
-        // *We will be provided these URLs for you
+        // *We will provide these URLs for you
         loaderUrl: 'Unity build Url'
         dataUrl: 'Unity build Url'
         frameworkUrl: 'Unity build Url'
         codeUrl: 'Unity build Url'
      })
 
-    // returned values details:
-    //   1. VSLWebGl: JSX to render
-    //   2. unityProvider: to be provided to VSLWebGl. * see example below.
-    //   3. translate: translate function, takes 1 argument (the text to translate).
-    //   4. isUnityLoaded: boolean indicator, is true when unity webgl finishes loading.
-    //   5. isTranslating: boolean state for when is fetching translation for your use.
-    //   6. replay: replay function, no arguments. (replays the last translated text)
-    //   7. error: if any errors occur, this string will explain it. also errors will be logged to console.
-
     return (
         <div>
-            {/* the webgl component for render, you can set styles, or style the wrapping container and keep the full width/height */}
+            {/* The WebGL component for rendering, can be styled as needed */}
             <VSLWebGl id="unityWebGl" style={{ width: '100%', height: '100%' }} unityProvider={unityProvider} />
 
-            {/* example input for the text state */}
+            {/* Example input for the text state */}
             <input type="text" value={inputText} onChange={ev => setInputText(ev.target.value)} />
 
-            {/* translate button, will work only when API Key is valid, after unity is loaded, and a NONE empty text is provided */}
-            <button type="button" onClick={() => translate(inputText)}>
+            {/* Translate button, triggers translation when Unity is loaded and input is provided */}
+            <button type="button" onClick={() => translateTextToASL(inputText)}>
                 translate
             </button>
 
-            {/* replay button uses the replay function */}
+            {/* Replay button, replays the last translation */}
             <button type="button" onClick={replay}>
                 replay
             </button>
@@ -56,3 +61,25 @@ const app = () => {
     )
 }
 ```
+
+## Documentation
+
+useVslWebGL **Hook**
+
+The useVslWebGL hook provides the necessary setup and functionality for integrating the VSL WebGL component within a React application. It returns an object with various properties and functions for rendering, controlling, and interacting with the WebGL component.
+
+### Required Parameters
+ * **API_KEY**: Your unique API key for accessing the VSL WebGL services.
+ * **loaderUrl, dataUrl, frameworkUrl, codeUrl**: URLs provided by VSL for accessing the Unity WebGL build. Each URL is necessary for loading the Unity environment properly.
+
+### Returned Values
+ 1. VSLWebGl (JSX Component):
+    * A JSX component for rendering the Unity WebGL. Can be styled and controlled within a parent component or container.
+    * Example:
+    ```js
+     <VSLWebGl style={{ width: '100%', height: '100%' }} unityProvider={unityProvider} /> 
+     ```
+ 2. translateTextToASL (Function):
+    * Function to trigger text translation within the Unity WebGL.
+    * **Arguments:** Accepts a single argument (the text to translate).
+    * **Example:** translateTextToASL("Hello, world!")

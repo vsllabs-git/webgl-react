@@ -5,7 +5,17 @@ import useVslWebGL from './hooks/useVslWebGL'
 function App() {
   const [inputText, setInputText] = useState('')
 
-  const { VSLWebGl, unityProvider, translate, isUnityLoaded, isTranslating, replay } = useVslWebGL({
+  const {
+    VSLWebGl,
+    unityProvider,
+    translateTextToASL,
+    isUnityLoaded,
+    isTranslating,
+    replay,
+    changeBgColor,
+    toggleCameraRotation,
+    setAnimationSpeed
+  } = useVslWebGL({
     // API_KEY: '123'
     API_KEY: import.meta.env.VITE_API_KEY,
     loaderUrl: import.meta.env.VITE_WEBGL_LOADER_URL,
@@ -18,7 +28,7 @@ function App() {
     <div>
       <VSLWebGl id="unityWebGl" style={{ width: '100%', height: '100%' }} unityProvider={unityProvider} />
       <input type="text" value={inputText} onChange={ev => setInputText(ev.target.value)} />
-      <button type="button" onClick={() => translate(inputText)}>
+      <button type="button" onClick={() => translateTextToASL(inputText)}>
         translate
       </button>
       <button type="button" onClick={replay}>
