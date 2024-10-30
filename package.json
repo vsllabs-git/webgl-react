@@ -16,7 +16,7 @@
 		"text-to-ASL",
 		"Deaf-community"
 	],
-	"homepage": "https://vsl-landing.vercel.app",
+	"homepage": "https://vsllabs.com",
 	"exports": {
 		".": {
 			"import": "./dist/index.es.js",

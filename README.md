@@ -1,17 +1,34 @@
 # @vsllabs/webgl-react
 
+
 ## Installation:
 
 To install the package, run:
 
+Using npm:
 ```bash
-$ npm install --save @vsllabs/webgl-react
+$ npm install @vsllabs/webgl-react
 ```
+
+Using yarn:
+```bash
+$ yarn add @vsllabs/webgl-react
+```
+
+
+## Table of Contents
+
+- [Usage Example](#usage-example)
+- [Documentation](#documentation)
+- [Required Parameters](#required-parameters)
+- [Returned Values](#returned-values)
+- [Example Workflow](#example-workflow)
 
 
 ## Usage Example:
 
 Below is an example of how to use the useVslWebGL hook within a React component:
+
 
 ```js
 import { useState } from 'react'
@@ -60,20 +77,22 @@ const app = () => {
 }
 ```
 
+
 ## Documentation
 
-useVslWebGL **Hook**
+The **useVslWebGL** hook provides the necessary setup and functionality for integrating the VSL WebGL component within a React application. It returns an object with various properties and functions for rendering, controlling, and interacting with the WebGL component.
 
-The useVslWebGL hook provides the necessary setup and functionality for integrating the VSL WebGL component within a React application. It returns an object with various properties and functions for rendering, controlling, and interacting with the WebGL component.
 
 ### Required Parameters
  * **API_KEY**: Your unique API key for accessing the VSL WebGL services.
  * **loaderUrl, dataUrl, frameworkUrl, codeUrl**: URLs provided by VSL for accessing the Unity WebGL build. Each URL is necessary for loading the Unity environment properly.
 
+
 ### Returned Values
+
 The following values and functions are returned by useVslWebGL:
 
-| value         | explanation                                                                           |
+| Value         | Explanation                                                                           |
 | :------------ | :------------------------------------------------------------------------------------ |
 | VSLWebGl | <ul><li>A JSX component for rendering the Unity WebGL. Can be styled and controlled within a parent component or container.</li><li>Example: <br><pre lang="javascript"> <VSLWebGl style={{ width: '100%', height: '100%' }} unityProvider={unityProvider} /> </pre></li></ul>  |
 | unityProvider | <ul><li>Required prop for the *VSLWebGl* component, provides the Unity instance.</li><li>Pass this to the *unityProvider* prop of *VSLWebGl* to initialize the Unity environment.</li></ul>  |
@@ -84,8 +103,8 @@ The following values and functions are returned by useVslWebGL:
 | error | <ul><li>If any errors occur during loading or translation, this string provides an error message explaining the issue.</li><li>**Example:** Display error in your UI if it’s not an empty string.</li><li>**Note:** Errors are also logged in the console</li></ul>  |
 
 
-### Example Workflow
 
+### Example Workflow
 
  1. Initialize the Hook: Call useVslWebGL with the required parameters to initialize the WebGL component.
  2. Render the Component: Use <VSLWebGl /> in your component, styled to fit your layout.
