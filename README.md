@@ -100,8 +100,8 @@ The following values and functions are returned by useVslWebGL:
 | isUnityLoaded | <ul><li>Indicates whether the Unity WebGL component has fully loaded. Useful for checking readiness to show loaders and before triggering translation.</li><li>**Example:** Disabling the translate button until Unity is ready.</li></ul>  |
 | isTranslating | <ul><li>Represents the loading state during the translation process. Helpful for displaying loading indicators.</li><li>**Example:** <pre lang="javascript"> {isTranslating ? 'Translating...' : 'Translate'} </pre></li></ul>  |
 | replay | <ul><li>Function to replay the last translated text within the Unity WebGL.</li><li>**Arguments:** No arguments required.</li></ul>  |
-| changeBgColor | <ul><li>Changes the background color of the WebGL component.</li><li>**Arguments:** Accepts a single argument, a string representing a hex color value (e.g., #FFFFFF for white).</li><li>**Example:** <pre lang="javascript" style="display: inline"> changeBgColor('#FF5733') </pre> to set the background color to a shade of orange.</li></ul>  |
-| setAnimationSpeed | <ul><li>Controls the speed of animations within the WebGL environment.</li><li>**Arguments:** Accepts a single string argument, which can be one of four options: "0" (for pause), "0.5", "1" (default), or "1.5".</li><li>**Example:** <pre lang="javascript" style="display: inline-block"> setAnimationSpeed("1.5") </pre> to set the animation speed to 1.5x.</li></ul>  |
+| changeBgColor | <ul><li>Changes the background color of the WebGL component.</li><li>**Arguments:** Accepts a single argument, a string representing a hex color value (e.g., #FFFFFF for white).</li><li>**Example:** <pre lang="javascript"> changeBgColor('#FF5733') </pre> to set the background color to a shade of orange.</li></ul>  |
+| setAnimationSpeed | <ul><li>Controls the speed of animations within the WebGL environment.</li><li>**Arguments:** Accepts a single string argument, which can be one of four options: "0" (for pause), "0.5", "1" (default), or "1.5".</li><li>**Example:** <pre lang="javascript"> setAnimationSpeed("1.5") </pre> to set the animation speed to 1.5x.</li></ul>  |
 | toggleCameraRotation | <ul><li>Toggles the rotation of the camera in the WebGL environment.</li><li>**Arguments:** Accepts a single boolean argument to enable (true) or disable (false > default) camera rotation.</li><li>**Example:** <pre lang="javascript"> toggleCameraRotation(true) </pre> to enable camera rotation.</li></ul>  |
 | error | <ul><li>If any errors occur during loading or translation, this string provides an error message explaining the issue.</li><li>**Example:** Display error in your UI if it’s not an empty string.</li><li>**Note:** Errors are also logged in the console</li></ul>  |
 
@@ -114,3 +114,8 @@ The following values and functions are returned by useVslWebGL:
  3. Translate Text: Use the translateTextToASL function to translate input text when Unity is loaded (isUnityLoaded).
  4. Replay Last Translation: Use the replay function to repeat the last translation as needed.
  5. Handle Errors: Check the error value to catch and display any issues that occur during loading or translation.
+
+
+ ## License
+
+[MIT](LICENSE)
