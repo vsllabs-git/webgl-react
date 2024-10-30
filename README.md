@@ -94,7 +94,7 @@ The following values and functions are returned by useVslWebGL:
 
 | Value         | Explanation                                    |
 | :------------ | :--------------------------------------------- |
-| VSLWebGl | <ul><li>A JSX component for rendering the Unity WebGL. Can be styled and controlled within a parent component or container.</li><li>Example: <br><pre lang="javascript"> <VSLWebGl style={{ width: '100%', height: '100%' }} unityProvider={unityProvider} /> </pre></li></ul>  |
+| VSLWebGl | <ul><li>A JSX component for rendering the Unity WebGL. Can be styled and controlled within a parent component or container.</li><li>Example: <br><pre lang="javascript"> <VSLWebGl unityProvider={unityProvider} unityProvider={unityProvider} /> </pre></li></ul>  |
 | unityProvider | <ul><li>Required prop for the ***VSLWebGl*** component, provides the Unity instance.</li><li>Pass this to the ***unityProvider*** prop of *VSLWebGl* to initialize the Unity environment.</li></ul>  |
 | translateTextToASL | <ul><li>Function to trigger text translation within the Unity WebGL.</li><li>**Arguments:** Accepts a single argument (the text to translate).</li><li>**Example:** <pre lang="javascript"> translateTextToASL("Hello, world!") </pre></li></ul>  |
 | isUnityLoaded | <ul><li>Indicates whether the Unity WebGL component has fully loaded. Useful for checking readiness to show loaders and before triggering translation.</li><li>**Example:** Disabling the translate button until Unity is ready.</li></ul>  |
