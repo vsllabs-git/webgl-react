@@ -5,17 +5,7 @@ import useVslWebGL from './hooks/useVslWebGL'
 function App() {
   const [inputText, setInputText] = useState('')
 
-  const {
-    VSLWebGl,
-    unityProvider,
-    translateTextToASL,
-    isUnityLoaded,
-    isTranslating,
-    replay,
-    changeBgColor,
-    toggleCameraRotation,
-    setAnimationSpeed
-  } = useVslWebGL({
+  const { VSLWebGl, unityProvider, translateTextToASL, replay } = useVslWebGL({
     // API_KEY: '123'
     API_KEY: import.meta.env.VITE_API_KEY,
     loaderUrl: import.meta.env.VITE_WEBGL_LOADER_URL,
