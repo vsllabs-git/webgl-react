@@ -80,7 +80,7 @@ const app = () => {
 
 ## Documentation
 
-The **useVslWebGL** hook provides the necessary setup and functionality for integrating the VSL WebGL component within a React application. It returns an object with various properties and functions for rendering, controlling, and interacting with the WebGL component.
+The ***useVslWebGL*** hook provides the necessary setup and functionality for integrating the VSL WebGL component within a React application. It returns an object with various properties and functions for rendering, controlling, and interacting with the WebGL component.
 
 
 ### Required Parameters
@@ -100,6 +100,9 @@ The following values and functions are returned by useVslWebGL:
 | isUnityLoaded | <ul><li>Indicates whether the Unity WebGL component has fully loaded. Useful for checking readiness to show loaders and before triggering translation.</li><li>**Usage example:** Disabling the translate button until Unity is ready.</li></ul>  |
 | isTranslating | <ul><li>Represents the loading state during the translation process. Helpful for displaying loading indicators.</li><li>**Example:** {isTranslating ? 'Translating...' : 'Translate'}</li></ul>  |
 | replay | <ul><li>Function to replay the last translated text within the Unity WebGL.</li><li>**Arguments:** No arguments required.</li></ul>  |
+| changeBgColor | <ul><li>Changes the background color of the WebGL component.</li><li>**Arguments:** Accepts a single argument, a string representing a hex color value (e.g., #FFFFFF for white).</li><li>**Example:** changeBgColor('#FF5733') to set the background color to a shade of orange.</li></ul>  |
+| setAnimationSpeed | <ul><li>Controls the speed of animations within the WebGL environment.</li><li>**Arguments:** Accepts a single string argument, which can be one of four options: "0" (for pause), "0.5", "1" (default), or "1.5".</li><li>**Example:** changeBgColor('#FF5733') to set the background color to a shade of orange.</li></ul>  |
+| toggleCameraRotation | <ul><li>Toggles the rotation of the camera in the WebGL environment.</li><li>**Arguments:** Accepts a single boolean argument to enable (true) or disable (false > default) camera rotation.</li><li>**Example:** toggleCameraRotation(true) to enable camera rotation.</li></ul>  |
 | error | <ul><li>If any errors occur during loading or translation, this string provides an error message explaining the issue.</li><li>**Example:** Display error in your UI if it’s not an empty string.</li><li>**Note:** Errors are also logged in the console</li></ul>  |
 
 
