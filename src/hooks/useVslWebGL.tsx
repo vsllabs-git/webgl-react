@@ -54,6 +54,13 @@ type useVslWebGLProps = {
   codeUrl: string
 }
 
+function handleCacheControl(url: string) {
+  if (url.endsWith('.loader.js') || url.endsWith('.framework.js.br')) {
+    return 'no-store'
+  }
+  return 'must-revalidate'
+}
+
 const useVslWebGL = ({ API_KEY, loaderUrl, dataUrl, frameworkUrl, codeUrl }: useVslWebGLProps) => {
   const [translatedText, setTranslatedText] = useState('')
   const [isTranslating, setIsTranslating] = useState(false)
@@ -64,7 +71,8 @@ const useVslWebGL = ({ API_KEY, loaderUrl, dataUrl, frameworkUrl, codeUrl }: use
     loaderUrl,
     dataUrl,
     frameworkUrl,
-    codeUrl
+    codeUrl,
+    cacheControl: handleCacheControl
   })
 
   const translateTextToASL = useCallback(
